@@ -22,11 +22,16 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 echo "HOLA1";
-$to = "jgarcia@intt2.com";
-$subject = "My subject";
-$txt = "Hello world!";
-$headers = "From: webmaster@example.com" . "\r\n" .
-"CC: somebodyelse@example.com";
+	  $to = "jgarcia@intt2.com"; 
+    $subject = "xd";
+    $message = "HOLA";
+    $from = "jgarcia@intt2.com";
+    $headers = "From:" . $from;
 
-mail($to,$subject,$txt,$headers);
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Mail Sent.";
+    }
+    else {
+        echo "failed";
+    }
 $app->run();
