@@ -39,14 +39,17 @@ $mail->SMTPSecure = 'ssl';
 $mail->SMTPAuth = true;
 $mail->Username = "jgarcia@intt2.com";
 $mail->Password = "bienvenido19";
-$mail->setFrom('jgarcia@intt2.com', 'First Last');
-$mail->addReplyTo('replyto@example.com', 'First Last');
-$mail->addAddress('jgarcia@intt2.com', 'John Doe');
+$mail->setFrom('jgarcia@intt2.com', 'INT DEVELOPERS');
+//$mail->addReplyTo('replyto@example.com', 'First Last');
+
+//$mail->addAddress('hdiaz@groundbreaking.mx', 'HUGO DIAZ');
+
+$mail->addAddress('jgarcia@intt2.com', 'jc');
 $mail->Subject = 'WARNING ';
 $mail->isHTML(true);
 
  $mail->Body    = ''.$body;
- $mail->AltBody = "This is the plain text version of the email content";
+ $mail->AltBody = "?";
 
  
 
