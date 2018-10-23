@@ -61,6 +61,6 @@ if (!$mail->send()) {
 }
 }else{
 
-	echo "NO POST DATAx";
+	echo "NO POST DATA sent";
 }
 //$app->run();
