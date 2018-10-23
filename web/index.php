@@ -25,7 +25,7 @@ echo "HOLA111";
 
 include("PHPMailer.php");
 include("SMTP.php");
-$var = $_POST['name'];
+$body = $_POST['body'];
 
 $mail = new PHPMailer;
 
@@ -41,11 +41,10 @@ $mail->Password = "bienvenido19";
 $mail->setFrom('jgarcia@intt2.com', 'First Last');
 $mail->addReplyTo('replyto@example.com', 'First Last');
 $mail->addAddress('jgarcia@intt2.com', 'John Doe');
-$mail->Subject = 'PHPMailer GMail SMTP test '.$var;
+$mail->Subject = 'WARNING ';
 
-$mail->AltBody = 'This is a plain-text message body';
- $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+ $mail->Body    = ''.$body;
+ 
 
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
