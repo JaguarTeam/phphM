@@ -21,7 +21,7 @@ $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
 });
-echo "HOLA";
+echo "HOLA1";
 $to = "jgarcia@intt2.com";
 $subject = "My subject";
 $txt = "Hello world!";
