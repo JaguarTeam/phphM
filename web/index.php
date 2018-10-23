@@ -52,4 +52,4 @@ if (!$mail->send()) {
     echo "Message sent!";
   
 }
-$app->run();
+//$app->run();
