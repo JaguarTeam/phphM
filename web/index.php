@@ -22,6 +22,8 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 echo "HOLA111";
+if (isset($_POST["body"])) {
+	# code...
 
 include("PHPMailer.php");
 include("SMTP.php");
@@ -51,5 +53,9 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
   
+}
+}else{
+
+	echo "NO POST DATA";
 }
 //$app->run();
