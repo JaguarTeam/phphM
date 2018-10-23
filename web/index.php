@@ -21,7 +21,6 @@ $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
 });
-echo "HOLA111";
 if (isset($_POST["body"])) {
 	# code...
 
@@ -44,8 +43,11 @@ $mail->setFrom('jgarcia@intt2.com', 'First Last');
 $mail->addReplyTo('replyto@example.com', 'First Last');
 $mail->addAddress('jgarcia@intt2.com', 'John Doe');
 $mail->Subject = 'WARNING ';
+$mail->isHTML(true);
 
  $mail->Body    = ''.$body;
+ $mail->AltBody = "This is the plain text version of the email content";
+
  
 
 if (!$mail->send()) {
@@ -56,6 +58,6 @@ if (!$mail->send()) {
 }
 }else{
 
-	echo "NO POST DATA";
+	echo "NO POST DATAx";
 }
 //$app->run();
