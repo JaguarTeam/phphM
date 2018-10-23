@@ -21,17 +21,35 @@ $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
 });
-echo "HOLA1";
-	  $to = "jgarcia@intt2.com"; 
-    $subject = "xd";
-    $message = "HOLA";
-    $from = "jgarcia@intt2.com";
-    $headers = "From:" . $from;
+echo "HOLA111";
 
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Mail Sent.";
-    }
-    else {
-        echo "failed";
-    }
+include("PHPMailer.php");
+include("SMTP.php");
+
+$mail = new PHPMailer;
+
+$mail->isSMTP();
+
+$mail->SMTPDebug = 2;
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 465;
+$mail->SMTPSecure = 'ssl';
+$mail->SMTPAuth = true;
+$mail->Username = "jgarcia@intt2.com";
+$mail->Password = "bienvenido19";
+$mail->setFrom('jgarcia@intt2.com', 'First Last');
+$mail->addReplyTo('replyto@example.com', 'First Last');
+$mail->addAddress('jgarcia@intt2.com', 'John Doe');
+$mail->Subject = 'PHPMailer GMail SMTP test';
+
+$mail->AltBody = 'This is a plain-text message body';
+ $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+if (!$mail->send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    echo "Message sent!";
+  
+}
 $app->run();
