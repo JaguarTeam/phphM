@@ -1,4 +1,5 @@
 <?php
+echo "HOLA";
 $to = "jgarcia@intt2.com";
 $subject = "My subject";
 $txt = "Hello world!";
