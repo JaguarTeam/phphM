@@ -50,7 +50,7 @@ $mail->isHTML(true);
 
  $mail->Body    = ''.$body;
  $mail->AltBody = "?";
-
+ 
  
 
 if (!$mail->send()) {
