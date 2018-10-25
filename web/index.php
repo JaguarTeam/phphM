@@ -20,13 +20,13 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
-});
-if (isset($_POST["body"])) {
+});//isset($_POST["body"]
+if (true) {
 	# code...
 
 include("PHPMailer.php");
 include("SMTP.php");
-$body = $_POST['body'];
+$body = "HOLAAA";//$_POST['body'];
 
 $mail = new PHPMailer;
 
