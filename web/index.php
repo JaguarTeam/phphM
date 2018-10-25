@@ -20,13 +20,13 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->get('/', function() use($app) {
   $app['monolog']->addDebug('logging output.');
   return $app['twig']->render('index.twig');
-});//isset($_POST["body"]
-if (true) {
+});
+if (isset($_POST["body"])) {
 	# code...
 
 include("PHPMailer.php");
 include("SMTP.php");
-$body = "HOLAAA";//$_POST['body'];
+$body = $_POST['body'];
 
 $mail = new PHPMailer;
 
@@ -42,7 +42,7 @@ $mail->Password = "bienvenido19";
 $mail->setFrom('jgarcia@intt2.com', 'INT DEVELOPERS');
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 
-//$mail->addAddress('hdiaz@groundbreaking.mx', 'HUGO DIAZ');
+$mail->addAddress('hdiaz@groundbreaking.mx', 'HUGO DIAZ');
 
 $mail->addAddress('jgarcia@intt2.com', 'jc');
 $mail->Subject = 'WARNING ';
@@ -50,7 +50,7 @@ $mail->isHTML(true);
 
  $mail->Body    = ''.$body;
  $mail->AltBody = "?";
- 
+
  
 
 if (!$mail->send()) {
