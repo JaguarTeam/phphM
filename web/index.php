@@ -42,7 +42,7 @@ $mail->Password = "bienvenido19";
 $mail->setFrom('jgarcia@intt2.com', 'INT DEVELOPERS');
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 
-$mail->addAddress('hdiaz@groundbreaking.mx', 'HUGO DIAZ');
+//$mail->addAddress('hdiaz@groundbreaking.mx', 'HUGO DIAZ');
 
 $mail->addAddress('jgarcia@intt2.com', 'jc');
 $mail->Subject = 'WARNING ';
