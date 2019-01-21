@@ -61,8 +61,8 @@ if (!$mail->send()) {
 }
 }else{
 
-	echo "NO POST DATA sent xd xd";
-	$myfile = fopen("newfile.php", "w") or die("Unable to open file!");
+	echo "NO POST DATA sent xd xd xd";
+	$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
 	$txt = "John Doe\n";
 	fwrite($myfile, $txt);
 	$txt = "Jane Doe\n";
